@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Nasghoi Portfolio</title>
+        <link rel="stylesheet" href="styles.css" />
+        <link rel="stylesheet" href="fanta.css" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+            integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        />
+    </head>
+    <body>
+        <header>
+            <a href="/">Nasrullah J</a>
+            <nav>
+                <a
+                    href="https://github.com/nasghoi"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    ><i class="fa-brands fa-github"></i
+                ></a>
+                <a
+                    href="https://www.linkedin.com/in/nasrullah-js"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    ><i class="fa-brands fa-square-linkedin"></i
+                ></a>
+            </nav>
+        </header>
+        <main>
+            <section>
+                <div class="intro-header">
+                    <h1>Ciao! I'm Nasrullah...</h1>
+                    <p>Software Engineer</p>
+                </div>
+                <h5 class="intro-description">
+                    Proactive and detail-oriented software engineer with a
+                    strong foundation in web app development. Based in Malaysia
+                    , I love to walk, play badminton and create internet things!
+                </h5>
+                <div class="links-container">
+                    <i class="fa-solid fa-arrow-right"></i>
+                    <a
+                        href="mailto:nasrullahjamsarim@gmail.com"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        Email me
+                    </a>
+                    <a
+                        href="https://github.com/nasghoi"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        >GitHub
+                    </a>
+                    <a
+                        href="https://www.linkedin.com/in/nasrullah-js"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        >LinkedIn
+                    </a>
+                </div>
+                <div id="play-game">
+                    <button onclick="">Play game!</button>
+                </div>
+                <div style="display: none" class="color-div">
+                    <h4>Pick a colour</h4>
+                    <p style="display: none">Huh.. now it's ruined!</p>
+                    <input
+                        type="color"
+                        id="color-picker"
+                        onchange=""
+                        value="#0084ff"
+                    />
+                    <button style="display: none" onclick="">Reset</button>
+                </div>
+            </section>
+
+            <!-- Skills Section -->
+            <section>
+                <h2>Skills</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Area</th>
+                            <th>Technologies</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>PHP</td>
+                            <td>Laravel | Yii2</td>
+                        </tr>
+                        <tr>
+                            <td>JavaScript</td>
+                            <td>ReactJS | NextJS</td>
+                        </tr>
+                        <tr>
+                            <td>Python</td>
+                            <td>FastAPI | GenAi</td>
+                        </tr>
+                        <tr>
+                            <td>Web</td>
+                            <td>
+                                Bootstrap | TailwindCSS | Git | Docker | AWS
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Database</td>
+                            <td>MySQL | PostgreSQL | Oracle</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <!-- Projects Section -->
+            <section>
+                <h2>Latest Projects</h2>
+                <div class="cards-grid">
+                    <!-- #1 Project -->
+                    <div class="project-card">
+                        <div>
+                            <p>March 2025</p>
+                            <h4>Junior Management System (eJunior)</h4>
+                            <div class="stack-list">
+                                <div class="card-button-secondary">
+                                    <p>NextJS</p>
+                                </div>
+                                <div class="card-button-secondary">
+                                    <p>Laravel</p>
+                                </div>
+                                <div class="card-button-secondary">
+                                    <p>ElectronJS</p>
+                                </div>
+                                <div class="card-button-secondary">
+                                    <p>Firebase CM</p>
+                                </div>
+                                <div class="card-button-secondary">
+                                    <p>Docker</p>
+                                </div>
+                                <div class="card-button-secondary">
+                                    <p>Linux</p>
+                                </div>
+                            </div>
+                            <p>
+                                eJunior is a management system for interns at
+                                AMTIS Solution Sdn Bhd.
+                            </p>
+                            <div class="project-links">
+                                <a href="/" target="_blank" rel="noopener noreferrer">Live</a>
+                                <a href="/" target="_blank" rel="noopener noreferrer">Source</a>
+                            </div>
+                        </div>
+                        <div class="img-div">
+                            <img src="/1_web_portfolio/public/ejunior.png" alt="ejunior-thumbnail" class="big-img">
+                        </div>
+                    </div>
+                    <!-- #2 Project -->
+                    <div class="project-card">
+                        <div>
+                            <p>September 2023</p>
+                            <h4>AI Website</h4>
+                            <div class="stack-list">
+                                <div class="card-button-secondary">
+                                    <p>HTML</p>
+                                </div>
+                                <div class="card-button-secondary">
+                                    <p>CSS</p>
+                                </div>
+                                <div class="card-button-secondary">
+                                    <p>Bootstrap</p>
+                                </div>
+                            </div>
+                            <p>
+                                A simple AI website that showcases various AI
+                                tools and resources. Developed for Codeathon competition.
+                            </p>
+                            <div class="project-links">
+                                <a href="/" target="_blank" rel="noopener noreferrer">Live</a>
+                                <a href="/" target="_blank" rel="noopener noreferrer">Source</a>
+                            </div>
+                        </div>
+                        <div class="img-div">
+                            <img src="/1_web_portfolio/public/codeathon.png" alt="ejunior-thumbnail" class="big-img">
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <footer>
+            <p>
+                By <a href="">Nasghoi</a> ⭐ the repo on <a href="">Github</a>
+            </p>
+        </footer>
+        <script></script>
+    </body>
+</html>
