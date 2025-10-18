@@ -4,8 +4,8 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Nasghoi Portfolio</title>
-        <link rel="stylesheet" href="styles.css" />
         <link rel="stylesheet" href="fanta.css" />
+        <link rel="stylesheet" href="styles.css" />
         <link
             rel="stylesheet"
             href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
@@ -66,7 +66,7 @@
                     </a>
                 </div>
                 <div id="play-game">
-                    <button onclick="">Play game!</button>
+                    <button onclick="playGame()">Play game!</button>
                 </div>
                 <div style="display: none" class="color-div">
                     <h4>Pick a colour</h4>
@@ -74,10 +74,12 @@
                     <input
                         type="color"
                         id="color-picker"
-                        onchange=""
+                        onchange="changeColor()"
                         value="#0084ff"
                     />
-                    <button style="display: none" onclick="">Reset</button>
+                    <button style="display: none" onclick="resetColor()">
+                        Reset
+                    </button>
                 </div>
             </section>
 
@@ -125,7 +127,15 @@
                     <!-- #1 Project -->
                     <div class="project-card">
                         <div>
-                            <p>March 2025</p>
+                            <div class="stack-list">
+                                <p>March 2025</p>
+                                <div class="card-button-warning">
+                                    <p>
+                                        <i class="fa-solid fa-bolt"></i>
+                                        In Progress..
+                                    </p>
+                                </div>
+                            </div>
                             <h4>Junior Management System (eJunior)</h4>
                             <div class="stack-list">
                                 <div class="card-button-secondary">
@@ -151,13 +161,27 @@
                                 eJunior is a management system for interns at
                                 AMTIS Solution Sdn Bhd.
                             </p>
-                            <div class="project-links">
-                                <a href="/" target="_blank" rel="noopener noreferrer">Live</a>
-                                <a href="/" target="_blank" rel="noopener noreferrer">Source</a>
-                            </div>
+                            <!-- <div class="project-links">
+                                <a
+                                    href="/"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    >Live</a
+                                >
+                                <a
+                                    href="/"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    >Source</a
+                                >
+                            </div> -->
                         </div>
                         <div class="img-div">
-                            <img src="public/ejunior.png" alt="ejunior-thumbnail" class="big-img">
+                            <img
+                                src="public/ejunior.png"
+                                alt="ejunior-thumbnail"
+                                class="big-img"
+                            />
                         </div>
                     </div>
                     <!-- #2 Project -->
@@ -173,20 +197,77 @@
                                     <p>CSS</p>
                                 </div>
                                 <div class="card-button-secondary">
+                                    <p>JavaScript</p>
+                                </div>
+                                <div class="card-button-secondary">
                                     <p>Bootstrap</p>
                                 </div>
                             </div>
                             <p>
                                 A simple AI website that showcases various AI
-                                tools and resources. Developed for Codeathon competition.
+                                tools and resources. Developed for Codeathon
+                                competition.
                             </p>
                             <div class="project-links">
-                                <a href="/" target="_blank" rel="noopener noreferrer">Live</a>
-                                <a href="/" target="_blank" rel="noopener noreferrer">Source</a>
+                                <a
+                                    href="https://ungku02.github.io/ai-webpage/"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    >Live</a
+                                >
+                                <a
+                                    href="https://github.com/ungku02/ai-webpage"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    >Source</a
+                                >
                             </div>
                         </div>
                         <div class="img-div">
-                            <img src="public/codeathon.png" alt="ejunior-thumbnail" class="big-img">
+                            <img
+                                src="public/codeathon.png"
+                                alt="codeathon"
+                                class="big-img"
+                            />
+                        </div>
+                    </div>
+                    <!-- #3 Project -->
+                    <div class="project-card">
+                        <div>
+                            <p>June 2022</p>
+                            <h4>React Movie DB</h4>
+                            <div class="stack-list">
+                                <div class="card-button-secondary">
+                                    <p>ReactJS</p>
+                                </div>
+                                <div class="card-button-secondary">
+                                    <p>Netlify</p>
+                                </div>
+                            </div>
+                            <p>
+                                A movie database application built with React.
+                            </p>
+                            <div class="project-links">
+                                <a
+                                    href="https://react-movie-app-nasghoi.netlify.app/"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    >Live</a
+                                >
+                                <!-- <a
+                                    href="/"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    >Source</a
+                                > -->
+                            </div>
+                        </div>
+                        <div class="img-div">
+                            <img
+                                src="public/react-movie-db.png"
+                                alt="react-movie-db"
+                                class="big-img"
+                            />
                         </div>
                     </div>
                 </div>
@@ -194,9 +275,52 @@
         </main>
         <footer>
             <p>
-                By <a href="">Nasghoi</a> ⭐ the repo on <a href="">Github</a>
+                By <a href="">Nasghoi</a> ⭐ the repo on
+                <a
+                    href="https://github.com/nasghoi/web-portfolio"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >Github</a
+                >
             </p>
         </footer>
-        <script></script>
+        <script>
+            // -- Colour switcher
+
+            // 1. select all html elements, so that we can manipulate them
+            const body = document.querySelector("body");
+            const colorInput = document.getElementById("color-picker");
+            const colorDiv = document.querySelector(".color-div");
+            const hiddenText = document.querySelector(".color-div p");
+            const resetBtn = document.querySelector(".color-div button");
+            const playBtn = document.getElementById("play-game");
+
+            // 2. create functions
+            function playGame() {
+                // enables the play of the game (show the colour selector input)
+                colorDiv.style.display = "block";
+                playBtn.style.display = "none";
+            }
+
+            function changeColor() {
+                // take user selected color, assign it to the background color of the website
+                const selectedColor = colorInput.value;
+                body.style.backgroundColor = selectedColor;
+                resetBtn.style.display = "block";
+                hiddenText.style.display = "block";
+                colorInput.style.display = "none";
+            }
+
+            function resetColor() {
+                body.style.backgroundColor = "#cadeff";
+                resetBtn.style.display = "none";
+                hiddenText.style.display = "none";
+                colorInput.style.display = "block";
+                colorDiv.style.display = "none";
+                playBtn.style.display = "block";
+            }
+
+            // 3. assign functions to the buttons, add function call to the actual elements
+        </script>
     </body>
 </html>
