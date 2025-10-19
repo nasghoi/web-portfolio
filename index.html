@@ -13,6 +13,7 @@
             crossorigin="anonymous"
             referrerpolicy="no-referrer"
         />
+        <script src="main.js" defer></script>
     </head>
     <body>
         <header>
@@ -83,195 +84,28 @@
                 </div>
             </section>
 
-            <!-- Skills Section -->
+            <!-- Skills Section Start -->
             <section>
                 <h2>Skills</h2>
-                <table>
+                <table id="skills-table">
                     <thead>
                         <tr>
                             <th>Area</th>
                             <th>Technologies</th>
                         </tr>
                     </thead>
-                    <tbody>
-                        <tr>
-                            <td>PHP</td>
-                            <td>Laravel | Yii2</td>
-                        </tr>
-                        <tr>
-                            <td>JavaScript</td>
-                            <td>ReactJS | NextJS</td>
-                        </tr>
-                        <tr>
-                            <td>Python</td>
-                            <td>FastAPI | GenAi</td>
-                        </tr>
-                        <tr>
-                            <td>Web</td>
-                            <td>
-                                Bootstrap | TailwindCSS | Git | Docker | AWS
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Database</td>
-                            <td>MySQL | PostgreSQL | Oracle</td>
-                        </tr>
-                    </tbody>
+                    <tbody></tbody>
                 </table>
             </section>
+            <!-- Skills Section End -->
 
-            <!-- Projects Section -->
+            <!-- Projects Section Start -->
             <section>
                 <h2>Latest Projects</h2>
-                <div class="cards-grid">
-                    <!-- #1 Project -->
-                    <div class="project-card">
-                        <div>
-                            <div class="stack-list">
-                                <p>March 2025</p>
-                                <div class="card-button-warning">
-                                    <p>
-                                        <i class="fa-solid fa-bolt"></i>
-                                        In Progress..
-                                    </p>
-                                </div>
-                            </div>
-                            <h4>Junior Management System (eJunior)</h4>
-                            <div class="stack-list">
-                                <div class="card-button-secondary">
-                                    <p>NextJS</p>
-                                </div>
-                                <div class="card-button-secondary">
-                                    <p>Laravel</p>
-                                </div>
-                                <div class="card-button-secondary">
-                                    <p>ElectronJS</p>
-                                </div>
-                                <div class="card-button-secondary">
-                                    <p>Firebase CM</p>
-                                </div>
-                                <div class="card-button-secondary">
-                                    <p>Docker</p>
-                                </div>
-                                <div class="card-button-secondary">
-                                    <p>Linux</p>
-                                </div>
-                            </div>
-                            <p>
-                                eJunior is a management system for interns at
-                                AMTIS Solution Sdn Bhd.
-                            </p>
-                            <!-- <div class="project-links">
-                                <a
-                                    href="/"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    >Live</a
-                                >
-                                <a
-                                    href="/"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    >Source</a
-                                >
-                            </div> -->
-                        </div>
-                        <div class="img-div">
-                            <img
-                                src="public/ejunior.png"
-                                alt="ejunior-thumbnail"
-                                class="big-img"
-                            />
-                        </div>
-                    </div>
-                    <!-- #2 Project -->
-                    <div class="project-card">
-                        <div>
-                            <p>September 2023</p>
-                            <h4>AI Website</h4>
-                            <div class="stack-list">
-                                <div class="card-button-secondary">
-                                    <p>HTML</p>
-                                </div>
-                                <div class="card-button-secondary">
-                                    <p>CSS</p>
-                                </div>
-                                <div class="card-button-secondary">
-                                    <p>JavaScript</p>
-                                </div>
-                                <div class="card-button-secondary">
-                                    <p>Bootstrap</p>
-                                </div>
-                            </div>
-                            <p>
-                                A simple AI website that showcases various AI
-                                tools and resources. Developed for Codeathon
-                                competition.
-                            </p>
-                            <div class="project-links">
-                                <a
-                                    href="https://ungku02.github.io/ai-webpage/"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    >Live</a
-                                >
-                                <a
-                                    href="https://github.com/ungku02/ai-webpage"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    >Source</a
-                                >
-                            </div>
-                        </div>
-                        <div class="img-div">
-                            <img
-                                src="public/codeathon.png"
-                                alt="codeathon"
-                                class="big-img"
-                            />
-                        </div>
-                    </div>
-                    <!-- #3 Project -->
-                    <div class="project-card">
-                        <div>
-                            <p>June 2022</p>
-                            <h4>React Movie DB</h4>
-                            <div class="stack-list">
-                                <div class="card-button-secondary">
-                                    <p>ReactJS</p>
-                                </div>
-                                <div class="card-button-secondary">
-                                    <p>Netlify</p>
-                                </div>
-                            </div>
-                            <p>
-                                A movie database application built with React. Just following the YouTube tutorial for learning purpose.
-                            </p>
-                            <div class="project-links">
-                                <a
-                                    href="https://react-movie-app-nasghoi.netlify.app/"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    >Live</a
-                                >
-                                <!-- <a
-                                    href="/"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    >Source</a
-                                > -->
-                            </div>
-                        </div>
-                        <div class="img-div">
-                            <img
-                                src="public/react-movie-db.png"
-                                alt="react-movie-db"
-                                class="big-img"
-                            />
-                        </div>
-                    </div>
-                </div>
+                <div class="cards-grid"></div>
             </section>
+
+            <!-- Projects Section End -->
         </main>
         <footer>
             <p>
@@ -284,6 +118,7 @@
                 >
             </p>
         </footer>
+
         <script>
             // -- Colour switcher
 

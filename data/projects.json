@@ -1,0 +1,48 @@
+[
+    {
+        "title": "Junior Management System (eJunior)",
+        "date": "March 2025",
+        "status": "In Progress",
+        "stack": [
+            "NextJS",
+            "Laravel",
+            "ElectronJS",
+            "Firebase CM",
+            "Docker",
+            "Linux"
+        ],
+        "desc": "eJunior is a management system for interns at AMTIS Solution Sdn Bhd.",
+        "image": "public/ejunior.png",
+        "alt": "ejunior-thumbnail",
+        "links": []
+    },
+    {
+        "title": "AI Website",
+        "date": "September 2023",
+        "stack": ["HTML", "CSS", "JavaScript", "Bootstrap"],
+        "desc": "A simple AI website that showcases various AI tools and resources. Developed for Codeathon competition.",
+        "image": "public/codeathon.png",
+        "alt": "codeathon",
+        "links": [
+            { "label": "Live", "url": "https://ungku02.github.io/ai-webpage/" },
+            {
+                "label": "Source",
+                "url": "https://github.com/ungku02/ai-webpage"
+            }
+        ]
+    },
+    {
+        "title": "React Movie DB",
+        "date": "June 2022",
+        "stack": ["ReactJS", "Netlify"],
+        "desc": "A movie database application built with React. Just following the YouTube tutorial for learning purpose.",
+        "image": "public/react-movie-db.png",
+        "alt": "react-movie-db",
+        "links": [
+            {
+                "label": "Live",
+                "url": "https://react-movie-app-nasghoi.netlify.app/"
+            }
+        ]
+    }
+]
