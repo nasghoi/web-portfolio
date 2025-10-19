@@ -112,11 +112,13 @@ section {
     color: #f76707;
     border-radius: var(--border-radius-small);
     padding: 0.01rem 0.5rem;
+    font-size: 0.8rem;
 }
 
 .card-button-primary {
     border-radius: var(--border-radius-small);
     padding: 0.01rem 0.5rem;
+    font-size: 0.8rem;
 }
 
 @media (min-width: 640px) {
