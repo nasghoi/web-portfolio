@@ -34,16 +34,28 @@
             </nav>
         </header>
         <main>
-            <section>
-                <div class="intro-header">
-                    <h1>Ciao! I'm Nasrullah...</h1>
-                    <p>Software Engineer</p>
+            <section class="hero-section">
+                <h1 class="hero-title">NASRULLAH</h1>
+
+                <div class="hero-content">
+                    <img
+                        src="./public/hero-section.png"
+                        alt="hero-image"
+                        class="hero-image"
+                    />
+
+                    <div class="hero-meta">
+                        <p>Software Engineer</p>
+                        <h5>
+                            Proactive and detail-oriented software engineer with
+                            a strong foundation in web app development. Based in
+                            Malaysia , I love to walk, play badminton and create
+                            internet things!
+                        </h5>
+                    </div>
                 </div>
-                <h5 class="intro-description">
-                    Proactive and detail-oriented software engineer with a
-                    strong foundation in web app development. Based in Malaysia
-                    , I love to walk, play badminton and create internet things!
-                </h5>
+            </section>
+            <section>
                 <div class="links-container">
                     <i class="fa-solid fa-arrow-right link-arrow"></i>
                     <a
@@ -123,7 +135,7 @@
             // -- Colour switcher
 
             // 1. select all html elements, so that we can manipulate them
-            const body = document.querySelector("body");
+            const body = document.querySelector("section.hero-section");
             const colorInput = document.getElementById("color-picker");
             const colorDiv = document.querySelector(".color-div");
             const hiddenText = document.querySelector(".color-div p");
@@ -140,14 +152,14 @@
             function changeColor() {
                 // take user selected color, assign it to the background color of the website
                 const selectedColor = colorInput.value;
-                body.style.backgroundColor = selectedColor;
+                body.style.background = selectedColor;
                 resetBtn.style.display = "block";
                 hiddenText.style.display = "block";
                 colorInput.style.display = "none";
             }
 
             function resetColor() {
-                body.style.backgroundColor = "#cadeff";
+                body.style.background = "linear-gradient(to bottom right, #171758, #2a61c7)";
                 resetBtn.style.display = "none";
                 hiddenText.style.display = "none";
                 colorInput.style.display = "block";

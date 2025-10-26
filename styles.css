@@ -38,19 +38,67 @@ section {
 }
 
 main {
-    gap: 4rem;
+    gap: 3rem;
 }
 
 section {
     gap: 1rem;
 }
 
-.intro-header p {
-    padding-top: 0.25rem;
+.hero-section {
+    position: relative;
+    background: linear-gradient(to bottom right, #171758, #2a61c7);
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
 }
 
-.intro-description {
-    max-width: 500px;
+.hero-title {
+    position: absolute;
+    top: 15%;
+    left: 50%;
+    transform: translateX(-50%) scaleY(5);
+    transform-origin: top;
+    font-family: "Alatsi", sans-serif;
+    font-size: clamp(3rem, 8vw, 7rem);
+    z-index: 0;
+    pointer-events: none;
+    white-space: nowrap;
+}
+
+.hero-image {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    filter: grayscale(60%);
+    transition: filter 0.5s ease, transform 0.5s ease;
+    transform: scale(1.02);
+}
+
+.hero-image:hover {
+    filter: grayscale(0%);
+    transform: scale(1.05);
+}
+
+.hero-meta {
+    position: absolute;
+    bottom: 3%;
+    left: 5%;
+    max-width: 400px;
+}
+
+.hero-meta h5 {
+    font-size: clamp(15px, 3vw, 1.5rem);
+    margin-bottom: 0.5rem;
+}
+
+.hero-meta p {
+    font-size: clamp(1rem, 2.5vw, 1.5rem);
+    margin-bottom: clamp(0, 2.5vw, 1.5rem);
+    text-align: justify;
 }
 
 .links-container {
@@ -128,5 +176,15 @@ section {
 
     .project-card .img-div {
         max-width: 45%;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-meta {
+        left: 3%;
+        max-width: 90vw;
+    }
+    .hero-title {
+        top: 10%;
     }
 }
