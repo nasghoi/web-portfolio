@@ -1,10 +1,9 @@
 [
     { "area": "PHP", "technologies": ["Laravel", "Yii2"] },
     { "area": "JavaScript", "technologies": ["ReactJS", "NextJS"] },
-    { "area": "Python", "technologies": ["FastAPI", "GenAi"] },
     {
         "area": "Web",
-        "technologies": ["Bootstrap", "TailwindCSS", "Git", "Docker", "AWS"]
+        "technologies": ["Bootstrap", "TailwindCSS", "Git", "Docker", "n8n"]
     },
     { "area": "Database", "technologies": ["MySQL", "PostgreSQL", "Oracle"] }
 ]

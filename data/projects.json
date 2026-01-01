@@ -6,7 +6,6 @@
         "stack": [
             "NextJS",
             "Laravel",
-            "ElectronJS",
             "Firebase CM",
             "Docker",
             "Linux"
@@ -14,7 +13,9 @@
         "desc": "eJunior is a management system for interns at AMTIS Solution Sdn Bhd.",
         "image": "public/ejunior.png",
         "alt": "ejunior-thumbnail",
-        "links": []
+        "links": [
+            { "label": "Live", "url": "https://ejunior.nasrm.com/" }
+        ]
     },
     {
         "title": "AI Website",
