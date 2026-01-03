@@ -54,7 +54,7 @@
         <meta property="og:url" content="https://portfolio.nasrm.com/" />
         <meta
             property="og:image"
-            content="https://portfolio.nasrm.com/public/favicon/banner-1200x630.png"
+            content="https://portfolio.nasrm.com/public/favicon/android-chrome-512x512.png"
         />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
@@ -105,12 +105,12 @@
                     />
 
                     <div class="hero-meta">
-                        <p>Software Engineer</p>
+                        <p>Nasrullah Jam Sarim</p>
                         <h5>
                             Proactive and detail-oriented software engineer with
-                            a strong foundation in web app development. Based in
-                            Malaysia , I love to walk, play badminton and create
-                            internet things!
+                            a strong foundation in web app and API development.
+                            Based in Malaysia , I love to walk, play badminton
+                            and create internet things!
                         </h5>
                     </div>
                 </div>
@@ -173,23 +173,49 @@
 
             <!-- Projects Section Start -->
             <section>
-                <h2>Latest Projects</h2>
+                <h2>Personal Projects</h2>
                 <div class="cards-grid"></div>
             </section>
-
             <!-- Projects Section End -->
+
+            <!-- Protected Section Start -->
+            <section>
+                <h2>
+                    Contributed Projects
+                    <span class="padlock" id="padlock">🔒</span>
+                </h2>
+                <div class="cards-grid-cont"></div>
+            </section>
+            <!-- Protected Section End -->
         </main>
         <footer>
             <p>
-                By <a href="">Nasghoi</a> ⭐ the repo on
+                By
                 <a
-                    href="https://github.com/nasghoi/web-portfolio"
+                    href="https://github.com/nasghoi"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >Nasghoi</a
+                >
+                ⭐ the repo on
+                <a
+                    href="https://github.com/nasghoi/dev-notes"
                     target="_blank"
                     rel="noopener noreferrer"
                     >Github</a
                 >
             </p>
         </footer>
+
+        <!-- Modal Start -->
+        <div id="tokenModal" class="modal">
+            <div class="modal-content">
+                <h3>Enter Secret Token</h3>
+                <input type="text" id="tokenInput" placeholder="Enter token" />
+                <button onclick="checkToken()">Submit</button>
+            </div>
+        </div>
+        <!-- Modal End -->
 
         <script>
             // -- Colour switcher
@@ -229,6 +255,47 @@
             }
 
             // 3. assign functions to the buttons, add function call to the actual elements
+
+            // Contributed projects
+            const padlock = document.getElementById("padlock");
+            const modal = document.getElementById("tokenModal");
+            const key = 42;
+
+            const tokens = {
+                nas: "aWxvdmV5b3V1bmdrdXphaW5hYg==",
+                nab: "bmFzcnVsbGFoamFtc2FyaW1zb2Z0d2FyZWVuZ2luZWVy",
+                nasnab: "bmFzbmFiZm9yZXZlcg==",
+            };
+
+            padlock.addEventListener("click", () => {
+                modal.style.display = "block";
+            });
+
+            window.addEventListener("click", (e) => {
+                if (e.target === modal) modal.style.display = "none";
+            });
+
+            function checkToken() {
+                const input = document
+                    .getElementById("tokenInput")
+                    .value.trim();
+                const secret = atob(tokens.nab);
+                if (input === secret) {
+                    const section = document.querySelector(".cards-grid-cont");
+                    section.style.display = "flex";
+                    section.style.flexDirection = "column";
+                    section.style.gap = "2rem";
+
+                    padlock.textContent = "🔓";
+                    modal.style.display = "none";
+                    padlock.style.pointerEvents = "none";
+                    padlock.style.cursor = "default";
+
+                    loadContProjects();
+                } else {
+                    alert("Wrong token! Try again.");
+                }
+            }
         </script>
     </body>
 </html>

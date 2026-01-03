@@ -1,0 +1,20 @@
+[
+    {
+        "title": "Experience Jerai Hill - Mobile App API",
+        "date": "November 2024",
+        "stack": ["Laravel", "MySQL", "Scramble API"],
+        "desc": "A backend Laravel Restful API for Experience Jerai Hill mobile application.",
+        "image": "private/exp-jerai-hill.png",
+        "alt": "experience-jerai-hill",
+        "links": [
+            {
+                "label": "App Store",
+                "url": "https://apps.apple.com/us/app/experience-jerai-hill/id6742806817"
+            },
+            {
+                "label": "Play Store",
+                "url": "https://play.google.com/store/apps/details?id=com.pknk.experiencejeraihill"
+            }
+        ]
+    }
+]
