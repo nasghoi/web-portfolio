@@ -189,17 +189,20 @@ section {
     background: rgba(0, 0, 0, 0.5);
 }
 .modal-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     background: #fff;
     margin: 15% auto;
     padding: 20px;
     border-radius: 8px;
-    width: 300px;
+    max-width: 300px;
     text-align: center;
 }
 .modal-content input {
-    width: 90%;
     padding: 0.5rem;
-    margin-bottom: 1rem;
+    margin-top: 1rem;
+    margin-bottom: 0.3rem;
 }
 .modal-content button {
     padding: 0.5rem 1rem;
@@ -210,6 +213,28 @@ section {
     cursor: pointer;
 }
 
+.toast {
+    visibility: hidden;
+    min-width: 250px;
+    margin-left: -125px;
+    background-color: #4caf50;
+    color: #fff;
+    text-align: center;
+    border-radius: 4px;
+    padding: 16px;
+    position: fixed;
+    z-index: 2000;
+    right: 20px;
+    font-size: 1rem;
+    opacity: 0;
+    transition: opacity 0.5s, bottom 0.5s;
+}
+.toast.show {
+    visibility: visible;
+    opacity: 1;
+    top: 20px;
+}
+
 @media (min-width: 640px) {
     .project-card {
         flex-direction: row;
@@ -217,6 +242,10 @@ section {
 
     .project-card .img-div {
         max-width: 45%;
+    }
+
+    .modal-content {
+        max-width: 400px;
     }
 }
 

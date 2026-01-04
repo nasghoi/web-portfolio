@@ -154,6 +154,22 @@
                 </div>
             </section>
 
+            <!-- Educations Section Start -->
+            <section>
+                <h2>Educations</h2>
+                <table id="educations-table">
+                    <thead>
+                        <tr>
+                            <th>University</th>
+                            <th>Level of Education</th>
+                            <th>CGPA</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </section>
+            <!-- Educations Section End -->
+            
             <!-- Skills Section Start -->
             <section>
                 <h2>Skills</h2>
@@ -210,10 +226,23 @@
             <div class="modal-content">
                 <h3>Enter Secret Token</h3>
                 <input type="text" id="tokenInput" placeholder="Enter token" />
+                <!-- Error message placeholder -->
+                <p
+                    id="errorMessage"
+                    style="
+                        color: red;
+                        margin-bottom: 0.5rem;
+                        align-self: flex-start;
+                    "
+                ></p>
                 <button onclick="checkToken()">Submit</button>
             </div>
         </div>
         <!-- Modal End -->
+
+        <!-- Toast container  Start -->
+        <div id="toast" class="toast"></div>
+        <!-- Toast container End -->
 
         <script>
             // -- Colour switcher
@@ -257,7 +286,7 @@
             // Contributed projects
             const padlock = document.getElementById("padlock");
             const modal = document.getElementById("tokenModal");
-            const key = 42;
+            const tokenInput = document.getElementById("tokenInput");
 
             const tokens = {
                 nas: "aWxvdmV5b3V1bmdrdXphaW5hYg==",
@@ -267,6 +296,7 @@
 
             padlock.addEventListener("click", () => {
                 modal.style.display = "block";
+                tokenInput.focus();
             });
 
             window.addEventListener("click", (e) => {
@@ -278,6 +308,8 @@
                     .getElementById("tokenInput")
                     .value.trim();
                 const secret = atob(tokens.nab);
+                const errorMessage = document.getElementById("errorMessage");
+
                 if (input === secret) {
                     const section = document.querySelector(".cards-grid-cont");
                     section.style.display = "flex";
@@ -286,14 +318,45 @@
 
                     padlock.textContent = "🔓";
                     modal.style.display = "none";
+                    errorMessage.textContent = "";
+                    loadContProjects();
                     padlock.style.pointerEvents = "none";
                     padlock.style.cursor = "default";
 
-                    loadContProjects();
+                    showToast("Access granted! Section unlocked 🔓");
+                    // Try to scroll the section to the top of the viewport
+                    section.scrollIntoView({
+                        behavior: "smooth",
+                        block: "nearest",
+                        inline: "nearest",
+                    });
+                    // Fallback for browsers that don't support options
+                    setTimeout(() => {
+                        window.scrollTo({
+                            top:
+                                section.getBoundingClientRect().top +
+                                window.scrollY -
+                                20,
+                            behavior: "smooth",
+                        });
+                    }, 500);
                 } else {
-                    alert("Wrong token! Try again.");
+                    errorMessage.textContent = "Oops, try again 😏";
                 }
             }
+
+            // clear error message on input
+            tokenInput.addEventListener("input", () => {
+                errorMessage.textContent = "";
+            });
+
+            // allow Enter key to submit token
+            tokenInput.addEventListener("keydown", function (event) {
+                if (event.key === "Enter") {
+                    event.preventDefault();
+                    checkToken();
+                }
+            });
         </script>
     </body>
 </html>

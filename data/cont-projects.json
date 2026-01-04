@@ -1,9 +1,24 @@
 [
     {
+        "title": "Multi Information Board (MIB) - Mobile App API",
+        "date": "November 2025",
+        "status": "In Progress",
+        "stack": ["Laravel", "MySQL", "Scramble API"],
+        "desc": "Built and maintained a backend Laravel Restful API for Multi Information Board (MIB) mobile application. MIB is one of the subsystems under Digital Masjid.",
+        "image": "private/mib.png",
+        "alt": "multi-information-board",
+        "links": [
+            {
+                "label": "Digital Masjid",
+                "url": "https://app.digitalmasjid.com/"
+            }
+        ]
+    },
+    {
         "title": "Experience Jerai Hill - Mobile App API",
         "date": "November 2024",
         "stack": ["Laravel", "MySQL", "Scramble API"],
-        "desc": "A backend Laravel Restful API for Experience Jerai Hill mobile application.",
+        "desc": "Built and maintained a backend Laravel Restful API for Experience Jerai Hill mobile application.",
         "image": "private/exp-jerai-hill.png",
         "alt": "experience-jerai-hill",
         "links": [
@@ -14,6 +29,38 @@
             {
                 "label": "Play Store",
                 "url": "https://play.google.com/store/apps/details?id=com.pknk.experiencejeraihill"
+            }
+        ]
+    },
+    {
+        "title": "e-Warga Emas JKM",
+        "date": "September 2024",
+        "stack": ["Laravel", "VueJS", "MySQL"],
+        "desc": "Fixed bugs and enhanced functionality for the e-Warga Emas system used by JKM to manage elderly citizen data and services.",
+        "image": "private/e-warga-emas.png",
+        "alt": "e-warga-emas",
+        "links": [
+            {
+                "label": "Live",
+                "url": "https://ewe.jkm.gov.my/"
+            }
+        ]
+    },
+    {
+        "title": "UniSIRAJ iStudent - Mobile App API",
+        "date": "May 2024",
+        "stack": ["Laravel", "MySQL", "Swagger"],
+        "desc": "Built and maintained a backend Laravel Restful API for UniSIRAJ iStudent mobile application.",
+        "image": "private/unisiraj-istudent.png",
+        "alt": "unisiraj-istudent",
+        "links": [
+            {
+                "label": "App Store",
+                "url": "https://apps.apple.com/my/app/unisiraj-istudent/id6745005758"
+            },
+            {
+                "label": "Play Store",
+                "url": "https://play.google.com/store/apps/details?id=my.edu.kuips.istudent"
             }
         ]
     }

@@ -2,20 +2,11 @@
     {
         "title": "Junior Management System (eJunior)",
         "date": "March 2025",
-        "status": "In Progress",
-        "stack": [
-            "NextJS",
-            "Laravel",
-            "Firebase CM",
-            "Docker",
-            "Linux"
-        ],
-        "desc": "eJunior is a management system for interns at AMTIS Solution Sdn Bhd.",
+        "stack": ["Laravel", "Firebase CM", "Docker", "Linux"],
+        "desc": "eJunior is a management system for interns at AMTIS Solution Sdn Bhd. It was developed for my Final Year Project (FYP) during my university studies.",
         "image": "public/ejunior.png",
-        "alt": "ejunior-thumbnail",
-        "links": [
-            { "label": "Live", "url": "https://ejunior.nasrm.com/" }
-        ]
+        "alt": "ejunior",
+        "links": [{ "label": "Live", "url": "https://ejunior.nasrm.com/" }]
     },
     {
         "title": "AI Website",

@@ -1,7 +1,25 @@
 document.addEventListener("DOMContentLoaded", () => {
     loadSkills();
     loadProjects();
+    loadEducations();
 });
+
+function loadEducations() {
+    fetch("data/educations.json")
+        .then((res) => res.json())
+        .then((educations) => {
+            const tbody = document.querySelector("#educations-table tbody");
+            educations.forEach((education) => {
+                const tr = document.createElement("tr");
+                tr.innerHTML = `
+                    <td>${education.university}</td>
+                    <td>${education.level_of_education}</td>
+                    <td>${education.cgpa}</td>
+                `;
+                tbody.appendChild(tr);
+            });
+        });
+}
 
 function loadSkills() {
     fetch("data/skills.json")
@@ -127,4 +145,13 @@ function loadContProjects() {
                 container.appendChild(card);
             });
         });
+}
+
+function showToast(message) {
+    const toast = document.getElementById("toast");
+    toast.textContent = message;
+    toast.className = "toast show";
+    setTimeout(() => {
+        toast.className = toast.className.replace("show", "");
+    }, 3000);
 }
