@@ -6,6 +6,6 @@
         "area": "Web",
         "technologies": ["Bootstrap", "TailwindCSS", "Git", "Docker", "n8n"]
     },
-    { "area": "Server Config", "technologies": ["Ubuntu"] },
+    { "area": "System Administration", "technologies": ["Ubuntu Server", "Linux"] },
     { "area": "Database", "technologies": ["MySQL", "PostgreSQL", "OracleSQL"] }
 ]
