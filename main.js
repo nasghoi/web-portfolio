@@ -8,15 +8,20 @@ function loadEducations() {
     fetch("data/educations.json")
         .then((res) => res.json())
         .then((educations) => {
-            const tbody = document.querySelector("#educations-table tbody");
+            const container = document.querySelector("#educations-grid");
             educations.forEach((education) => {
-                const tr = document.createElement("tr");
-                tr.innerHTML = `
-                    <td>${education.university}</td>
-                    <td>${education.level_of_education}</td>
-                    <td>${education.cgpa}</td>
+                const card = document.createElement("div");
+                card.className = "education-card glass-card";
+                card.innerHTML = `
+                    <div class="edu-content">
+                        <h3>${education.university}</h3>
+                        <p class="edu-level">${education.level_of_education}</p>
+                    </div>
+                    <div class="edu-meta">
+                        <span class="cgpa-badge">CGPA: ${education.cgpa}</span>
+                    </div>
                 `;
-                tbody.appendChild(tr);
+                container.appendChild(card);
             });
         });
 }
@@ -25,14 +30,22 @@ function loadSkills() {
     fetch("data/skills.json")
         .then((res) => res.json())
         .then((skills) => {
-            const tbody = document.querySelector("#skills-table tbody");
+            const container = document.querySelector("#skills-grid");
             skills.forEach((skill) => {
-                const tr = document.createElement("tr");
-                tr.innerHTML = `
-                    <td>${skill.area}</td>
-                    <td>${skill.technologies.join(" | ")}</td>
+                const card = document.createElement("div");
+                card.className = "skill-card glass-card";
+
+                const techChips = skill.technologies
+                    .map((tech) => `<span class="tech-chip">${tech}</span>`)
+                    .join("");
+
+                card.innerHTML = `
+                    <h3>${skill.area}</h3>
+                    <div class="tech-chips-container">
+                        ${techChips}
+                    </div>
                 `;
-                tbody.appendChild(tr);
+                container.appendChild(card);
             });
         });
 }
@@ -44,21 +57,23 @@ function loadProjects() {
             const container = document.querySelector(".cards-grid");
             projects.forEach((project) => {
                 const card = document.createElement("div");
-                card.className = "project-card";
+                card.className = "project-card glass-card";
+
+                // Tech chips similar to skills section
                 const stackButtons = project.stack
-                    .map(
-                        (tech) => `
-                    <div class="card-button-secondary"><p>${tech}</p></div>
-                `
-                    )
+                    .map((tech) => `<span class="tech-chip">${tech}</span>`)
                     .join("");
+
                 const links = project.links
                     .map(
                         (link) => `
-                    <a href="${link.url}" target="_blank" rel="noopener noreferrer">${link.label}</a>
-                `
+                    <a href="${link.url}" target="_blank" rel="noopener noreferrer">
+                        <i class="fa-solid fa-link"></i> ${link.label}
+                    </a>
+                `,
                     )
                     .join("");
+
                 let status =
                     typeof project.status === "string"
                         ? project.status.toLowerCase()
@@ -70,21 +85,22 @@ function loadProjects() {
                 }
 
                 card.innerHTML = `
-                    <div>
-                        <p>${project.date} — ${status}</p>
-                        <h4>${project.title}</h4>
-                            <div class="stack-list">${stackButtons}</div>
-                            <p>${project.desc}</p>
-                            ${
-                                links
-                                    ? `<div class="project-links">${links}</div>`
-                                    : ""
-                            }
-                    </div>
                     <div class="img-div">
-                        <img src="${project.image}" alt="${
-                    project.alt
-                }" class="big-img" />
+                        <img src="${project.image}" alt="${project.alt}" loading="lazy" />
+                    </div>
+                    <div>
+                        <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 0.5rem;">
+                            <span style="font-size: 0.85rem; color: #64748b; font-family: 'Fira Code', monospace;">${project.date}</span>
+                            ${status}
+                        </div>
+                        <h4>${project.title}</h4>
+                        <div class="stack-list">${stackButtons}</div>
+                        <p>${project.desc}</p>
+                        ${
+                            links
+                                ? `<div class="project-links">${links}</div>`
+                                : ""
+                        }
                     </div>
                 `;
                 container.appendChild(card);
@@ -99,21 +115,22 @@ function loadContProjects() {
             const container = document.querySelector(".cards-grid-cont");
             projects.forEach((project) => {
                 const card = document.createElement("div");
-                card.className = "project-card";
+                card.className = "project-card glass-card";
+
                 const stackButtons = project.stack
-                    .map(
-                        (tech) => `
-                    <div class="card-button-secondary"><p>${tech}</p></div>
-                `
-                    )
+                    .map((tech) => `<span class="tech-chip">${tech}</span>`)
                     .join("");
+
                 const links = project.links
                     .map(
                         (link) => `
-                    <a href="${link.url}" target="_blank" rel="noopener noreferrer">${link.label}</a>
-                `
+                    <a href="${link.url}" target="_blank" rel="noopener noreferrer">
+                        <i class="fa-solid fa-link"></i> ${link.label}
+                    </a>
+                `,
                     )
                     .join("");
+
                 let status =
                     typeof project.status === "string"
                         ? project.status.toLowerCase()
@@ -125,21 +142,22 @@ function loadContProjects() {
                 }
 
                 card.innerHTML = `
-                    <div>
-                        <p>${project.date} — ${status}</p>
-                        <h4>${project.title}</h4>
-                            <div class="stack-list">${stackButtons}</div>
-                            <p>${project.desc}</p>
-                            ${
-                                links
-                                    ? `<div class="project-links">${links}</div>`
-                                    : ""
-                            }
-                    </div>
                     <div class="img-div">
-                        <img src="${project.image}" alt="${
-                    project.alt
-                }" class="big-img" />
+                        <img src="${project.image}" alt="${project.alt}" loading="lazy" />
+                    </div>
+                    <div>
+                         <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 0.5rem;">
+                            <span style="font-size: 0.85rem; color: #64748b; font-family: 'Fira Code', monospace;">${project.date}</span>
+                            ${status}
+                        </div>
+                        <h4>${project.title}</h4>
+                        <div class="stack-list">${stackButtons}</div>
+                        <p>${project.desc}</p>
+                        ${
+                            links
+                                ? `<div class="project-links">${links}</div>`
+                                : ""
+                        }
                     </div>
                 `;
                 container.appendChild(card);
