@@ -1,10 +1,10 @@
 [
     { "area": "PHP", "technologies": ["Laravel", "Yii2"] },
-    { "area": "JavaScript", "technologies": ["ReactJS", "NextJS"] },
+    { "area": "JavaScript", "technologies": ["ReactJS", "VueJS"] },
     { "area": "Java", "technologies": ["JSP", "Java EE"] },
     {
         "area": "Web",
-        "technologies": ["Bootstrap", "TailwindCSS", "Git", "Docker", "n8n"]
+        "technologies": ["Bootstrap", "TailwindCSS", "Git", "Docker", "n8n", "Material UI"]
     },
     { "area": "System Administration", "technologies": ["Ubuntu Server", "Linux"] },
     { "area": "Database", "technologies": ["MySQL", "PostgreSQL", "OracleSQL"] }
