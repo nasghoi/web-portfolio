@@ -2,6 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
     loadSkills();
     loadProjects();
     loadEducations();
+    initBackgroundGrid();
 });
 
 function loadEducations() {
@@ -173,3 +174,110 @@ function showToast(message) {
         toast.className = toast.className.replace("show", "");
     }, 3000);
 }
+
+let gridCols = 0;
+let gridRows = 0;
+let gridSize = 40;
+let activeCell = null;
+
+function initBackgroundGrid() {
+    const grid = document.getElementById("bg-grid");
+    if (!grid) return;
+
+    const width = window.innerWidth;
+    const height = window.innerHeight;
+
+    gridCols = Math.ceil(width / gridSize);
+    gridRows = Math.ceil(height / gridSize);
+    const total = gridCols * gridRows;
+
+    grid.style.gridTemplateColumns = `repeat(${gridCols}, ${gridSize}px)`;
+    grid.style.gridTemplateRows = `repeat(${gridRows}, ${gridSize}px)`;
+
+    const fragment = document.createDocumentFragment();
+    for (let i = 0; i < total; i++) {
+        const cell = document.createElement("div");
+        cell.classList.add("bg-cell");
+        fragment.appendChild(cell);
+    }
+    grid.innerHTML = "";
+    grid.appendChild(fragment);
+}
+
+// Track mouse globally
+// Track mouse globally
+let activeIndices = new Set();
+// Cache cells to avoid querying DOM on every move
+let cachedCells = [];
+
+// Update cache in initBackgroundGrid
+const originalInit = initBackgroundGrid;
+initBackgroundGrid = function () {
+    originalInit();
+    cachedCells = document.querySelectorAll(".bg-cell");
+    activeIndices = new Set();
+};
+
+document.addEventListener("mousemove", (e) => {
+    if (gridCols === 0) return;
+
+    const x = e.clientX;
+    const y = e.clientY;
+
+    const col = Math.floor(x / gridSize);
+    const row = Math.floor(y / gridSize);
+
+    // Range in cells (radius)
+    const range = 3;
+
+    const newIndices = new Set();
+
+    // Loop through bounding box around cursor
+    const startCol = Math.max(0, col - range);
+    const endCol = Math.min(gridCols - 1, col + range);
+    const startRow = Math.max(0, row - range);
+    const endRow = Math.min(gridRows - 1, row + range);
+
+    for (let r = startRow; r <= endRow; r++) {
+        for (let c = startCol; c <= endCol; c++) {
+            const dx = c - col;
+            const dy = r - row;
+            // Use distance formula for circle, or just box for square area
+            // Let's use circle for smoother effect
+            if (dx * dx + dy * dy <= range * range) {
+                const index = r * gridCols + c;
+                newIndices.add(index);
+            }
+        }
+    }
+
+    // Remove old that are not in new
+    activeIndices.forEach((index) => {
+        if (!newIndices.has(index)) {
+            if (cachedCells[index])
+                cachedCells[index].classList.remove("hovered");
+        }
+    });
+
+    // Add new
+    newIndices.forEach((index) => {
+        if (cachedCells[index]) cachedCells[index].classList.add("hovered");
+    });
+
+    activeIndices = newIndices;
+});
+
+// Clear hover on mouse leave window
+document.addEventListener("mouseleave", () => {
+    if (activeCell) {
+        activeCell.classList.remove("hovered");
+        activeCell = null;
+    }
+});
+
+// Debounce resize
+let resizeTimeout;
+window.addEventListener("resize", () => {
+    clearTimeout(resizeTimeout);
+    resizeTimeout = setTimeout(initBackgroundGrid, 200);
+});
