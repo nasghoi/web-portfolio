@@ -78,7 +78,7 @@ html {
 .bg-cell.hovered::before,
 .bg-cell.hovered::after {
     background-color: rgba(60, 130, 246, 0.8); /* Highlight color on hover */
-    transform: rotate(270deg);
+    transform: rotate(225deg);
 }
 
 h1,
