@@ -128,7 +128,8 @@
         <section>
             <h2>
                 Contributed Projects
-                <span class="padlock" id="padlock">🔒</span>
+                <!-- <span class="padlock" id="padlock">🔒</span> -->
+                <span class="padlock" id="padlock">🔓</span>
             </h2>
             <div class="cards-grid-cont"></div>
         </section>
@@ -144,11 +145,10 @@
     </footer>
 
     <!-- Modal Start -->
-    <div id="tokenModal" class="modal">
+    <!-- <div id="tokenModal" class="modal">
         <div class="modal-content">
             <h3>Enter Secret Token</h3>
             <input type="text" id="tokenInput" placeholder="Enter token" />
-            <!-- Error message placeholder -->
             <p id="errorMessage" style="
                         color: red;
                         margin-bottom: 0.5rem;
@@ -156,7 +156,7 @@
                     "></p>
             <button onclick="checkToken()">Submit</button>
         </div>
-    </div>
+    </div> -->
     <!-- Modal End -->
 
     <!-- Toast container  Start -->
@@ -209,7 +209,7 @@
 
         const tokens = {
             nas: "aWxvdmV5b3V1bmdrdXphaW5hYg==",
-            nab: "bmFzcnVsbGFoamFtc2FyaW1zb2Z0d2FyZWVuZ2luZWVy",
+            nab: "bmFzcnVsbGFoamFtc2FyaW1AZ21haWwuY29t",
             nasnab: "bmFzbmFiZm9yZXZlcg==",
         };
 

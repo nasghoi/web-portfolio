@@ -29,10 +29,6 @@ body {
     position: relative;
 }
 
-html {
-    /* background: transparent; */
-}
-
 #bg-grid {
     position: fixed;
     top: 0;
@@ -531,7 +527,8 @@ button:hover {
 }
 
 .cards-grid-cont {
-    display: none;
+    /* display: none; */
+    display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
 }

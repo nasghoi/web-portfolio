@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
     loadSkills();
     loadProjects();
+    loadContProjects(); // remove this when want to lock it again
     loadEducations();
     initBackgroundGrid();
 });
