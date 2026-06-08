@@ -9,6 +9,21 @@
         "links": [{ "label": "Live", "url": "https://ejunior.nasrm.com/" }]
     },
     {
+        "title": "Gymmetry",
+        "date": "November 2025",
+        "stack": ["ReactJS", "Vite", "Tailwind CSS"],
+        "desc": "A workout tracker website that have 30 simple workout exercises",
+        "image": "public/gymmetry.png",
+        "alt": "gymmetry",
+        "links": [
+            { "label": "Live", "url": "https://gymmetry.nasrm.com/" },
+            {
+                "label": "Source",
+                "url": "https://github.com/nasghoi/gym-metry"
+            }
+        ]
+    },
+    {
         "title": "AI Website",
         "date": "September 2023",
         "stack": ["HTML", "CSS", "JavaScript", "Bootstrap"],
