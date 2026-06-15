@@ -2,7 +2,6 @@
     {
         "title": "Multi Information Board (MIB) - Mobile App API",
         "date": "November 2025",
-        "status": "In Progress",
         "stack": ["Laravel", "MySQL", "Scramble API"],
         "desc": "Built and maintained a backend Laravel Restful API for Multi Information Board (MIB) mobile application. MIB is one of the subsystems under Digital Masjid.",
         "image": "private/mib.png",
